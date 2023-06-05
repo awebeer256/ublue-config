@@ -7,14 +7,6 @@ bios:
 changelogs:
   rpm-ostree db diff --changelogs
 
-distrobox-boxkit:
-  echo 'Creating Boxkit distrobox ...'
-  distrobox create --image ghcr.io/ublue-os/boxkit -n boxkit -Y
-
-distrobox-debian:
-  echo 'Creating Debian distrobox ...'
-  distrobox create --image quay.io/toolbx-images/debian-toolbox:unstable -n debian -Y
-
 distrobox-opensuse:
   echo 'Creating openSUSE distrobox ...'
   distrobox create --image quay.io/toolbx-images/opensuse-toolbox:tumbleweed -n opensuse -Y
