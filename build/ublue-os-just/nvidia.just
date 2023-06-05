@@ -27,4 +27,14 @@ setup-firefox-flatpak-vaapi-nvidia:
         --env=MOZ_DISABLE_RDD_SANDBOX=1 \
         --env=NVD_BACKEND=direct \
         --env=MOZ_ENABLE_WAYLAND=1 \
-        org.mozilla.firefox
+        org.mozilla.firefox && \
+    flatpak override \
+        --user \
+        --filesystem=host-os \
+        --env=LIBVA_DRIVER_NAME=nvidia \
+        --env=LIBVA_DRIVERS_PATH=/run/host/usr/lib64/dri \
+        --env=LIBVA_MESSAGING_LEVEL=1 \
+        --env=MOZ_DISABLE_RDD_SANDBOX=1 \
+        --env=NVD_BACKEND=direct \
+        --env=MOZ_ENABLE_WAYLAND=1 \
+        io.gitlab.librewolf-community
